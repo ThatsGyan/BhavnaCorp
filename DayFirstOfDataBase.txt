@@ -1,0 +1,31 @@
+create database BHAVNA_CORP  //dataase creation
+
+create table personal_details(id int,name nvarchar(20),personal_email nvarchar(20), fathers_name nvarchar(20), address nvarchar(40) )	/* table creation */
+create table official_details(id int,company_email nvarchar(20), salary numeric(18, 0),hra numeric(18,0) ) 				/* table creation */
+create table salary_details(id int, ctc numeric(18, 0),hra numeric(18,0), basic numeric(18,0) )						/* table creation */
+
+
+insert into personal_details values(1, 'Aditya', 'aditya.123@gmail.com','Ram Babu','B-123 _ ashok vihar colony agra')		/* table details */
+insert into personal_details values(2, 'Amit', 'amit.123@gmail.com,'Raghunath singh','C-123 _ paran vihar colony mathura')	/* table details */
+insert into personal_details values(3, 'Ramit', 'Ramit.123@gmail.com,'Shambhunath singh','D-123 _ karan vihar colony mathura')	/* table details */
+
+insert into official_details values (1, 'aditya.singh@bhavna.com', 42000, 9000 )		/* table details */
+insert into official_details values (2, 'amit.singh@bhavna.com', 43000, 10000  )		/* table details */
+insert into official_details values (3, 'ramit.singh@bhavna.com', 40000, 8000  )		/* table details */
+
+insert into salary_details values (1, 5500000, 9000, 42000)		/* table details */
+insert into salary_details values (2, 5800000, 10000, 43000)		/* table details */
+insert into salary_details values (3, 5100000, 8000, 40000)		/* table details */
+
+select *from personal_details values				/*data manipulation */
+
+drop table from personal_details values				/*data manipulation */
+
+select *from official_details values  				/*data manipulation */
+
+delete from official_details values where id = 2 		/*data manipulation */
+ 
+
+
+
+

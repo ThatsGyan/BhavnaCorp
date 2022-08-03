@@ -1,0 +1,85 @@
+create database Ecommerce
+use Ecommerce
+
+create table Product(PID int, PName nvarchar(20),PPrice(18,20), PCategory nvarchar(20), PManufacturer nvarchar(20) )
+
+insert into Product values (1, 'Arhar Daal', 180, food, 'Null')
+insert into Product values (2, 'moong Daal', 190, food, 'Null')
+insert into Product values (3, 'Chana Daal', 211, food, 'Null')
+insert into Product values (4, 'Rice Daal', 300, food, 'India Gate')
+insert into Product values (5, 'Colgate ToothPaste', 93, Health Care, 'Hindustan Uniliver')
+insert into Product values (6, 'LG Ultra gear 27 inch monitor', 25999, 'media & Technology','ife Good')
+insert into Product values (7, 'ProDot Keyboard', 230,  'media & Technology'
+insert into Product values (8, 'Dell Mouse', 200,  'media & Technology', 'Dell Corp')
+insert into Product values (9, 'intel 12700 12th Gen Processor', 32000,  'media & Technology', 'Intel Corp')
+insert into Product values (10, 'Gigabyte Aero G Z690', 30000,  'media & Technology', 'GigaByte')
+
+select * from product
+
+create table Customer (CID int, CName nvarchar(20), CNumber int(10), Address nvarchar(20)  )
+
+insert into Customer values(1, 'Gyanendra', 1234567858, 'k-77 ram Bag ')
+insert into Customer values(1, 'Rachit', 1234258847, 'k-75 ram Bag ')
+insert into Customer values(1, 'Rahul', 1234567896, 'k-76 ram Bag ')
+insert into Customer values(1, 'Gaurav', 1234369869, 'M-76 ram Bag ')
+insert into Customer values(1, 'Sumit', 1234567897, 'k-79 ram Bag ')
+insert into Customer values(1, 'Komal', 1231267848, 'B-75 ram Bag ')
+insert into Customer values(1, 'Nirmal', 1234567891, 'k-76 ram Bag ')
+insert into Customer values(1, 'Vivek', 1234567836, 'k-72 ram Bag ')
+insert into Customer values(1, 'Chanchal', 1234567889, 'D-77 ram Bag ')
+insert into Customer values(1, 'Dilkush', 1234567899, 'A-77 ram Bag ')
+insert into Customer values(1, 'Sumit', 1234567999, 'C-77 ram Bag ')
+
+select from * Customer
+
+
+create table Orders(OrderNO int, PID int, Price numeric(18,2), Name nvachar(20) )
+
+insert into Orders values(101,4,104,'Rahul' )
+insert into Orders values(102,4,105,'Ramit' )
+insert into Orders values(103,4,106,'Chanchal' )
+insert into Orders values(104,4,104,'Nirmal' )
+insert into Orders values(106,4,107,'Vivek' )
+insert into Orders values(106,4,108,'Chyanchal' )
+insert into Orders values(107,4,109,'Dilkush' )
+insert into Orders values(108,4,110,'Sumit' )
+insert into Orders values(109,4,111,'Gyanendra' )
+insert into Orders values(110,4,1555,'Rahul' )
+insert into Orders values(111,4,1012,'Gaurav' )
+
+select from * Orders
+
+create table account(CardNO int, AccountHoldername(30) nvarchar, OrderNO int, Address nvarchar(20),PaymentStatus varchar(5)  )
+
+insert into account values(748699417970, 'Mohit Singh', k-77 ram Bag', 'Yes' )
+insert into account values(748699417980, 'Gyanendra Singh', k-77 ram Bag', 'Yes'  )
+insert into account values(748699417990, 'Ramit Singh', 101, 'k-72 ram Bag ', 'Yes'  )
+insert into account values(748699417910, 'Sumit Singh', 101, 'k-79 ram Bag ' , 'No' )
+insert into account values(748699417970, 'Gaurav Singh', 101, 'M-76 ram Bag ', 'Yes'  )
+insert into account values(748699417770, 'rahul Singh', 101, 'k-76 ram Bag ', 'No'  )
+insert into account values(748699417990, 'Chancal Singh', 101, 'D-77 ram Bag ', 'Yes'  )
+insert into account values(748699417880, 'Vivek Singh', 101, 'k-72 ram Bag ', 'No'  )
+insert into account values(748699417330, 'Dilkush Singh', 101, 'A-77 ram Bag ', 'No'  )
+insert into account values(748699417360, 'Sumit Singh', 101, 'k-79 ram Bag ', 'No'  )
+insert into account values(748699417370, 'Nirmal Singh', 101, 'k-76 ram Bag ', 'Yes'  )
+insert into account values(748699417150, 'Rachit Singh', 'k-75 ram Bag', 'No'  )
+
+
+select * from account
+
+drop table account
+
+create view Customer_View
+as 
+select PID,Price
+from Products as P
+
+Create view account_view
+as select
+sum(Price) as 'Total Sales Amount'
+from Products as p
+
+Create order_View
+as select
+OrderNO,Name,PID
+from Orders as O

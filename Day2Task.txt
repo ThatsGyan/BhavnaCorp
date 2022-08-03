@@ -1,0 +1,27 @@
+/*intersection Operqator*/
+select *from Customer
+intersect
+select*from account
+
+/*Union Operation*/
+Select * from Customer
+union
+Select * from account
+
+/*in Operation*/
+select * from Customer where CName in('Rahul','gaurav','Chanchal','Vivek')
+
+/* != Operator*/
+seect OrderNo from Accounts where  PaymentStatus != 'Yes'
+
+/*between Status*/ 
+select * from Orders where Price between 110 and 1600
+
+/*Like Operator*/
+select * from Customer where CName like 'R%[au]%'
+
+/*is not null operator*/
+select OrderNO,PID from Orders where PID is not null
+
+/*is null operator*/
+select * from Products where PManufacturer is null
